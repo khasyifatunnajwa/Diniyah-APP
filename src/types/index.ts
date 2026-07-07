@@ -219,3 +219,112 @@ export interface Announcement {
   created_by: string | null
   created_at: string
 }
+
+// ============ CORE ENGINE TYPES ============
+
+export interface Module {
+  id: string
+  pondok_id: string
+  slug: string
+  name: string
+  description: string | null
+  icon: string | null
+  category: string
+  version: string
+  is_builtin: boolean
+  is_enabled: boolean
+  config: Record<string, any>
+  created_at: string
+}
+
+export interface RolePermission {
+  id: string
+  pondok_id: string
+  role: Role
+  module_slug: string
+  can_create: boolean
+  can_read: boolean
+  can_update: boolean
+  can_delete: boolean
+  created_at: string
+}
+
+export interface Notification {
+  id: string
+  pondok_id: string
+  user_id: string | null
+  title: string
+  message: string | null
+  type: string
+  is_read: boolean
+  link: string | null
+  created_at: string
+}
+
+export interface Theme {
+  id: string
+  pondok_id: string
+  theme_name: string
+  primary_color: string
+  accent_color: string
+  bg_color: string | null
+  is_active: boolean
+  created_at: string
+}
+
+export interface WorkspaceWidget {
+  id: string
+  pondok_id: string
+  user_id: string
+  widget_type: string
+  title: string
+  config: Record<string, any>
+  position: number
+  width: 1 | 2 | 3 | 4
+  is_visible: boolean
+  created_at: string
+}
+
+export interface BackupConfig {
+  id: string
+  pondok_id: string
+  provider: string
+  schedule: string
+  last_backup: string | null
+  settings: Record<string, any>
+  is_active: boolean
+  created_at: string
+}
+
+export interface ApiKey {
+  id: string
+  pondok_id: string
+  name: string
+  key_hash: string
+  permissions: any[]
+  last_used: string | null
+  is_active: boolean
+  created_at: string
+}
+
+export interface CustomModule {
+  id: string
+  pondok_id: string
+  name: string
+  slug: string
+  icon: string | null
+  table_name: string
+  fields: CustomModuleField[]
+  menu_group: string
+  is_enabled: boolean
+  created_at: string
+}
+
+export interface CustomModuleField {
+  name: string
+  label: string
+  type: 'text' | 'number' | 'date' | 'select' | 'textarea' | 'boolean'
+  required: boolean
+  options?: string[]
+  default?: any
+}

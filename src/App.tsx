@@ -19,6 +19,13 @@ import InventarisPage from './pages/InventarisPage'
 import SuratPage from './pages/SuratPage'
 import GuruPage from './pages/GuruPage'
 import SettingsPage from './pages/SettingsPage'
+import MarketplacePage from './pages/MarketplacePage'
+import ModuleBuilderPage from './pages/ModuleBuilderPage'
+import StudioPage from './pages/StudioPage'
+import ThemeStorePage from './pages/ThemeStorePage'
+import RaporPage from './pages/RaporPage'
+import AgendaPage from './pages/AgendaPage'
+import CustomModulePage from './pages/CustomModulePage'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { session, profile, loading } = useAuth()
@@ -46,9 +53,9 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/" element={!session ? <LandingPage /> : <Navigate to={profile ? '/dashboard' : '/setup'} replace />} />
-      <Route path="/login" element={!session ? <LoginPage /> : <Navigate to={profile ? '/dashboard' : '/setup'} replace />} />
-      <Route path="/signup" element={!session ? <SignupPage /> : <Navigate to={profile ? '/dashboard' : '/setup'} replace />} />
+      <Route path="/" element={!session ? <LandingPage /> : <Navigate to={profile ? '/app/dashboard' : '/setup'} replace />} />
+      <Route path="/login" element={!session ? <LoginPage /> : <Navigate to={profile ? '/app/dashboard' : '/setup'} replace />} />
+      <Route path="/signup" element={!session ? <SignupPage /> : <Navigate to={profile ? '/app/dashboard' : '/setup'} replace />} />
       <Route path="/setup" element={session ? <SetupWizard /> : <Navigate to="/login" replace />} />
       <Route path="/app" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
         <Route index element={<Navigate to="/app/dashboard" replace />} />
@@ -57,14 +64,21 @@ export default function App() {
         <Route path="absensi" element={<AbsensiPage />} />
         <Route path="nilai" element={<NilaiPage />} />
         <Route path="jadwal" element={<JadwalPage />} />
+        <Route path="rapor" element={<RaporPage />} />
         <Route path="guru" element={<GuruPage />} />
         <Route path="finance" element={<FinancePage />} />
         <Route path="asrama" element={<AsramaPage />} />
         <Route path="tahfidz" element={<TahfidzPage />} />
         <Route path="perizinan" element={<PerizinanPage />} />
         <Route path="announcements" element={<AnnouncementsPage />} />
+        <Route path="agenda" element={<AgendaPage />} />
         <Route path="inventaris" element={<InventarisPage />} />
         <Route path="surat" element={<SuratPage />} />
+        <Route path="marketplace" element={<MarketplacePage />} />
+        <Route path="module-builder" element={<ModuleBuilderPage />} />
+        <Route path="studio" element={<StudioPage />} />
+        <Route path="theme-store" element={<ThemeStorePage />} />
+        <Route path="custom/:slug" element={<CustomModulePage />} />
         <Route path="settings" element={<SettingsPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
