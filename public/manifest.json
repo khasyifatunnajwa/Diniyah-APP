@@ -1,0 +1,18 @@
+{
+  "name": "SIM KBM Platform",
+  "short_name": "SIM KBM",
+  "description": "Platform ERP untuk Pondok Pesantren dan Lembaga Pendidikan Islam",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a221c",
+  "theme_color": "#1d7556",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#1d7556"/>
+  <path d="M256 80 L400 140 L400 280 Q400 380 256 440 Q112 380 112 280 L112 140 Z" fill="#2a9168" stroke="#7acaa8" stroke-width="4"/>
+  <path d="M256 120 L368 168 L368 280 Q368 356 256 404 Q144 356 144 280 L144 168 Z" fill="none" stroke="#aee0ca" stroke-width="3" opacity="0.6"/>
+  <text x="256" y="300" font-family="Plus Jakarta Sans, sans-serif" font-size="120" font-weight="800" fill="#eef9f4" text-anchor="middle">K</text>
+  <circle cx="256" cy="160" r="16" fill="#fbbf24"/>
+</svg>
